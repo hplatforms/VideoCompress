@@ -50,11 +50,11 @@ async def help_message_f(client, message):
                return
         except UserNotParticipant:
             await message.reply_text(
-                text="**Please Join My Updates Channel to use this Bot!**",
+                text="**Botu kullanabilmek için kanala katılın!**",
                 reply_markup=InlineKeyboardMarkup(
                     [
                         [
-                            InlineKeyboardButton("Join Updates Channel", url=f"https://t.me/{UPDATES_CHANNEL}")
+                            InlineKeyboardButton("Kanal", url=f"https://t.me/{UPDATES_CHANNEL}")
                         ]
                     ]
                 ),
@@ -63,7 +63,7 @@ async def help_message_f(client, message):
             return
         except Exception:
             await message.reply_text(
-                text="Something went Wrong. Contact my [Support Group](https://t.me/linux_repo).",
+                text="Birşeyler ters gitti. İletişime geçin [Grup](https://t.me/trbotlarsohbet).",
                 parse_mode="markdown",
                 disable_web_page_preview=True
             )
@@ -74,14 +74,14 @@ async def help_message_f(client, message):
         reply_markup=InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton('Updates Channel', url='https://t.me/Discovery_Updates')
+                    InlineKeyboardButton('Kanal', url='https://t.me/trbotlar')
                 ],
                 [
-                    InlineKeyboardButton('Support Group', url='https://t.me/linux_repo')
+                    InlineKeyboardButton('Grup', url='https://t.me/trbotlarsohbet')
                 ],
                 [
-                    InlineKeyboardButton('Developer', url='https://t.me/AbirHasan2005'), # Bloody Thief, Don't Become a Developer by Stealing other's Codes & Hard Works!
-                    InlineKeyboardButton('Source Code', url='https://github.com/AbirHasan2005/VideoCompress') # Must Give us Credits!
+                    InlineKeyboardButton('Geliştirici', url='https://t.me/hplatformsadmin'), # Bloody Thief, Don't Become a Developer by Stealing other's Codes & Hard Works!
+                    InlineKeyboardButton('Kod', url='https://github.com/hplatforms/VideoCompress') # Must Give us Credits!
                 ]
             ]
         ),
