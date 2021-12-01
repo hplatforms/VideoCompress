@@ -6,38 +6,38 @@ from bot.get_cfg import get_config
 
 
 class Localisation:
-    START_TEXT = "Hello, \n\nThis is a Telegram <b>Video Compress Bot</b>. \n\n<b>Please send me any Telegram big video file I will compress it as s small video file!</b> \n\n/help for more details. \n\nSupport Group: @Linux_Repo"
+    START_TEXT = "Merhaba, \n\nBu bir Telegram <b>Video Sıkıştırma Botudur</b>. \n\n<b>Lütfen bana herhangi bir büyük Telegram dosyası gönderin, onu küçük video dosyası olarak sıkıştıracağım!</b> \n\nDaha fazla ayrıntı için /help \n\nSupport Group: @trbotlarsohbet"
    
-    ABS_TEXT = " Please don't be selfish."
+    ABS_TEXT = " Lütfen bencil olma."
     
     FORMAT_SELECTION = "Select the desired format: <a href='{}'>file size might be approximate</a> \nIf you want to set custom thumbnail, send photo before or quickly after tapping on any of the below buttons.\nYou can use /deletethumbnail to delete the auto-generated thumbnail."
     
     
-    DOWNLOAD_START = "📥 Downloading ... 📥 \n"
+    DOWNLOAD_START = "📥 İndiriliyor ... 📥 \n"
     
-    UPLOAD_START = "📤 Uploading ... 📤 \n"
+    UPLOAD_START = "📤 Yükleniyor ... 📤 \n"
     
-    COMPRESS_START = "📀 Trying to compress ... 📀"
+    COMPRESS_START = "📀 Sıkıştırılıyor ... 📀"
     
-    RCHD_BOT_API_LIMIT = "size greater than maximum allowed size (50MB). Neverthless, trying to upload."
+    RCHD_BOT_API_LIMIT = "İzin verilen max boyut (50MB). Yine de yüklemeye çalışıyorum."
     
-    RCHD_TG_API_LIMIT = "Downloaded in {} seconds.\nDetected File Size: {}\nSorry. But, I cannot upload files greater than 1.95GB due to Telegram API limitations."
+    RCHD_TG_API_LIMIT = "İndiriildi {} saniyede.\nAlgılanan DOSYALAR: {}\nÜzgünüm Telegram 1.95GB API kısıtlaması sebebiyle işlemi gerçekleştiremiyorum."
     
-    COMPRESS_SUCCESS = "📥 Downloaded in {}\n\n📀 Compressed in {}\n\n📤 Uploaded in {}\n\nBy @Discovery_Updates"
+    COMPRESS_SUCCESS = "📥 İndirildi {}\n\n📀 Sıkıştırıldı {}\n\n📤 Yüklendi {}\n\nBy @trbotlar"
 
-    COMPRESS_PROGRESS = "⏳ ETA: {}\n🚀 Progress: {}%"
+    COMPRESS_PROGRESS = "⏳ ETA: {}\n🚀 İşleniyor: {}%"
 
-    SAVED_CUSTOM_THUMB_NAIL = "Custom video / file thumbnail saved. This image will be used in the video / file."
+    SAVED_CUSTOM_THUMB_NAIL = "Özel video / dosya küçük resmi kaydedildi. Bu görüntü video / dosyanızda kullanılacak."
     
-    DEL_ETED_CUSTOM_THUMB_NAIL = "✅ Custom thumbnail cleared succesfully."
+    DEL_ETED_CUSTOM_THUMB_NAIL = "✅ Thumbnail başarıyla silindi."
     
-    FF_MPEG_DEL_ETED_CUSTOM_MEDIA = "✅ Media cleared succesfully."
+    FF_MPEG_DEL_ETED_CUSTOM_MEDIA = "✅ Media başarıyla silindi."
     
-    SAVED_RECVD_DOC_FILE = "✅ Downloaded Successfully."
+    SAVED_RECVD_DOC_FILE = "✅ İndirme başarılı."
     
     CUSTOM_CAPTION_UL_FILE = " "
     
-    NO_CUSTOM_THUMB_NAIL_FOUND = "No Custom ThumbNail found."
+    NO_CUSTOM_THUMB_NAIL_FOUND = "Thumbnail bulunamadı."
     
     NO_VOID_FORMAT_FOUND = "no-one gonna help you\n{}"
     
@@ -47,7 +47,7 @@ class Localisation:
     
     HELP_MESSAGE = get_config(
         "STRINGS_HELP_MESSAGE",
-        "Hi, I am Video Compressor Bot \n\n1. Send me your telegram big video file \n2. Reply to the file with: `/compress 50` \n\nSupport Group: @Linux_Repo"
+        "Merhaba, ben Video Sıkıştırma Botuyum \n\n1. Bana büyük telegram dosyanızı gönderin \n2. Şu şekilde yanıtlayın: `/compress 50` \n\nDestek Grubu: @trbotlarsohbet"
     )
     WRONG_MESSAGE = get_config(
         "STRINGS_WRONG_MESSAGE",
