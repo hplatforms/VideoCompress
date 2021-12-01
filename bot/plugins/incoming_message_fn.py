@@ -71,11 +71,11 @@ async def incoming_start_message_f(bot, update):
                 return
         except UserNotParticipant:
             await message.reply_text(
-                text="**Please Join My Updates Channel to use this Bot!**",
+                text="**Botu kullanabilmek için kanala katılın!**",
                 reply_markup=InlineKeyboardMarkup(
                     [
                         [
-                            InlineKeyboardButton("Join Updates Channel", url=f"https://t.me/{UPDATES_CHANNEL}")
+                            InlineKeyboardButton("Kanal", url=f"https://t.me/{UPDATES_CHANNEL}")
                         ]
                     ]
                 ),
@@ -84,7 +84,7 @@ async def incoming_start_message_f(bot, update):
             return
         except Exception:
             await message.reply_text(
-                text="Something went Wrong. Contact my [Support Group](https://t.me/linux_repo).",
+                text="Bir şeyler ters gitti. İletişime geçin [Grup](https://t.me/trbotlarsohbet).",
                 parse_mode="markdown",
                 disable_web_page_preview=True
             )
@@ -95,10 +95,10 @@ async def incoming_start_message_f(bot, update):
         reply_markup=InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton('Updates Channel', url='https://t.me/Discovery_Updates')
+                    InlineKeyboardButton('Kanal', url='https://t.me/trbotlar')
                 ],
                 [
-                    InlineKeyboardButton('Support Group', url='https://t.me/linux_repo')
+                    InlineKeyboardButton('Grup', url='https://t.me/trbotlarsohbet')
                 ]
             ]
         ),
@@ -124,11 +124,11 @@ async def incoming_compress_message_f(bot, update):
         except UserNotParticipant:
             await bot.send_message(
                 chat_id=update.chat.id,
-                text="**Please Join My Updates Channel to use this Bot!**",
+                text="**Botu kullanabilmek için kanala katılın!**",
                 reply_markup=InlineKeyboardMarkup(
                     [
                         [
-                            InlineKeyboardButton("Join Updates Channel", url=f"https://t.me/{UPDATES_CHANNEL}")
+                            InlineKeyboardButton("Kanal", url=f"https://t.me/{UPDATES_CHANNEL}")
                         ]
                     ]
                 ),
@@ -138,7 +138,7 @@ async def incoming_compress_message_f(bot, update):
         except Exception:
             await bot.send_message(
                 chat_id=update.chat.id,
-                text="Something went Wrong. Contact my [Support Group](https://t.me/linux_repo).",
+                text="Birşeyler ters gitti. İletişime geçin [Grup](https://t.me/trbotlarsohbet).",
                 parse_mode="markdown",
                 disable_web_page_preview=True
             )
@@ -193,7 +193,7 @@ async def incoming_compress_message_f(bot, update):
         bst_now = utc_now + datetime.timedelta(minutes=00, hours=6)
         bst = bst_now.strftime("%d/%m/%Y, %H:%M:%S")
         now = f"\n{ist} (GMT+05:30)`\n`{bst} (GMT+06:00)"
-        download_start = await bot.send_message(chat_id, f"**Bot Become Busy Now !!** \n\nDownload Started at `{now}`",
+        download_start = await bot.send_message(chat_id, f"**Bot şimdi meşgul !!** \n\nİndirme başladı `{now}`",
                                                 parse_mode="markdown")
         try:
             d_start = time.time()
@@ -220,7 +220,7 @@ async def incoming_compress_message_f(bot, update):
             if (video is None):
                 try:
                     await sent_message.edit_text(
-                        text="Download stopped"
+                        text="İndirme durdu."
                     )
                     chat_id = LOG_CHANNEL
                     utc_now = datetime.datetime.utcnow()
@@ -230,13 +230,13 @@ async def incoming_compress_message_f(bot, update):
                     bst = bst_now.strftime("%d/%m/%Y, %H:%M:%S")
                     now = f"\n{ist} (GMT+05:30)`\n`{bst} (GMT+06:00)"
                     await bot.send_message(chat_id,
-                                           f"**Download Stopped, Bot is Free Now !!** \n\nProcess Done at `{now}`",
+                                           f"**İndirme bitti, bot boşta !!** \n\nİşlem Yapıldı `{now}`",
                                            parse_mode="markdown")
                     await download_start.delete()
                 except:
                     pass
                 delete_downloads()
-                LOGGER.info("Download stopped")
+                LOGGER.info("İndirme durdu.")
                 return
         except (ValueError) as e:
             try:
@@ -260,7 +260,7 @@ async def incoming_compress_message_f(bot, update):
                 reply_markup=InlineKeyboardMarkup(
                     [
                         [
-                            InlineKeyboardButton('Show Bot Status', url=f'https://t.me/{LOG_CHANNEL}')
+                            InlineKeyboardButton('Bot Günlüğü', url=f'https://t.me/{LOG_CHANNEL}')
                             # That's Username na ...
                         ]
                     ]
@@ -286,7 +286,7 @@ async def incoming_compress_message_f(bot, update):
                 bst_now = utc_now + datetime.timedelta(minutes=00, hours=6)
                 bst = bst_now.strftime("%d/%m/%Y, %H:%M:%S")
                 now = f"\n{ist} (GMT+05:30)`\n`{bst} (GMT+06:00)"
-                await bot.send_message(chat_id, f"**Download Failed, Bot is Free Now !!** \n\nProcess Done at `{now}`",
+                await bot.send_message(chat_id, f"**İndirme başarısız, bot boşta !!** \n\nİşlem yapıldı `{now}`",
                                        parse_mode="markdown")
                 await download_start.delete()
             except:
@@ -306,7 +306,7 @@ async def incoming_compress_message_f(bot, update):
         bst = bst_now.strftime("%d/%m/%Y, %H:%M:%S")
         now = f"\n{ist} (GMT+05:30)`\n`{bst} (GMT+06:00)"
         await download_start.delete()
-        compress_start = await bot.send_message(chat_id, f"**Compressing Video ...** \n\nProcess Started at `{now}`",
+        compress_start = await bot.send_message(chat_id, f"**Video Sıkıştırıldı ...** \n\nİşlem Yapıldı `{now}`",
                                                 parse_mode="markdown")
         await sent_message.edit_text(
             text=Localisation.COMPRESS_START
@@ -335,7 +335,7 @@ async def incoming_compress_message_f(bot, update):
             bst = bst_now.strftime("%d/%m/%Y, %H:%M:%S")
             now = f"\n{ist} (GMT+05:30)`\n`{bst} (GMT+06:00)"
             await compress_start.delete()
-            upload_start = await bot.send_message(chat_id, f"**Uploading Video ...** \n\nProcess Started at `{now}`",
+            upload_start = await bot.send_message(chat_id, f"**Video Yüklendi...** \n\nİşlem yapıldı `{now}`",
                                                   parse_mode="markdown")
             await sent_message.edit_text(
                 text=Localisation.UPLOAD_START,
@@ -371,7 +371,7 @@ async def incoming_compress_message_f(bot, update):
                     bst = bst_now.strftime("%d/%m/%Y, %H:%M:%S")
                     now = f"\n{ist} (GMT+05:30)`\n`{bst} (GMT+06:00)"
                     await bot.send_message(chat_id,
-                                           f"**Upload Stopped, Bot is Free Now !!** \n\nProcess Done at `{now}`",
+                                           f"**Yükleme durdu, bot boşta !!** \n\nİşlem yapıldı `{now}`",
                                            parse_mode="markdown")
                     await upload_start.delete()
                 except:
@@ -389,7 +389,7 @@ async def incoming_compress_message_f(bot, update):
             bst = bst_now.strftime("%d/%m/%Y, %H:%M:%S")
             now = f"\n{ist} (GMT+05:30)`\n`{bst} (GMT+06:00)"
             await upload_start.delete()
-            await bot.send_message(chat_id, f"**Upload Done, Bot is Free Now !!** \n\nProcess Done at `{now}`",
+            await bot.send_message(chat_id, f"**Yüklendi, bot boşta !!** \n\nİşlem yapıldı `{now}`",
                                    parse_mode="markdown")
             LOGGER.info(upload.caption);
             try:
@@ -407,7 +407,7 @@ async def incoming_compress_message_f(bot, update):
                 chat_id = LOG_CHANNEL
                 now = datetime.datetime.now()
                 await bot.send_message(chat_id,
-                                       f"**Compression Failed, Bot is Free Now !!** \n\nProcess Done at `{now}`",
+                                       f"**Sıkıştırma başarız, bot boşta !!** \n\nİşlem yapıldı `{now}`",
                                        parse_mode="markdown")
                 await download_start.delete()
             except:
@@ -426,7 +426,7 @@ async def incoming_compress_message_f(bot, update):
             bst_now = utc_now + datetime.timedelta(minutes=00, hours=6)
             bst = bst_now.strftime("%d/%m/%Y, %H:%M:%S")
             now = f"\n{ist} (GMT+05:30)`\n`{bst} (GMT+06:00)"
-            await bot.send_message(chat_id, f"**Download Error, Bot is Free Now !!** \n\nProcess Done at `{now}`",
+            await bot.send_message(chat_id, f"**İndirme başarız, bot boşta !!** \n\nİşlem yapıldı `{now}`",
                                    parse_mode="markdown")
             await download_start.delete()
         except:
